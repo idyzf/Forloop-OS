@@ -4,8 +4,7 @@ library(openxlsx)
 library(dplyr)
 rm(list=ls())
 data_clin <- read.csv("OSU_Clinical_Data.csv")
-#data_clin$Date.of.Craniotomy <- sub("/", "-", data_clin$Date.of.Craniotomy)
-#data_clin$Date.of.Death <- sub("/", "-", data_clin$Date.of.Death)
+
 names(data_clin)
 
 diagnostic <- data_clin$Date.of.Craniotomy
@@ -23,7 +22,7 @@ for (i in 1:length(diagnostic)){
 m<- 25
 
 
-#interval(diagnostic[2], death[2]) %/% months(1)
+
 OS<- OS[-c(2:nrow(OS)),]
 OS<-t(OS)
 OS<- as.data.frame(OS, rowNames=FALSE)
